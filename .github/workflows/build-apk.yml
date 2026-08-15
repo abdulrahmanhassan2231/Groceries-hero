@@ -3,14 +3,13 @@ name: Build Android APK
 on:
   workflow_dispatch:
     inputs:
-      server_ip:
+      ip_address:
         description: 'Your PC IP Address (e.g., 192.168.1.5)'
         required: true
-        default: '192.168.1.5'
+        default: '192.168.1.100'
 
 jobs:
   build:
-    name: Build APK
     runs-on: ubuntu-latest
 
     steps:
@@ -20,19 +19,21 @@ jobs:
       - name: Set up JDK 17
         uses: actions/setup-java@v5
         with:
-          java-version: '17'
           distribution: 'temurin'
-          cache: gradle
+          java-version: '17'
 
       - name: Grant execute permission for gradlew
         run: chmod +x android/gradlew
 
       - name: Build Debug APK with custom IP
-        run: ./gradlew assembleDebug -PSERVER_URL="http://${{ github.event.inputs.server_ip }}:8000"
-        working-directory: ./android
+        env:
+          SERVER_URL: http://${{ github.event.inputs.ip_address }}:8000
+        run: |
+          cd android
+          ./gradlew assembleDebug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Grocery-App-Debug
-          path: android/app/build/outputs/apk/debug/*.apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
