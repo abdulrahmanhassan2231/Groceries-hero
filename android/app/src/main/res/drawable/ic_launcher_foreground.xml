@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- simple shopping-cart glyph -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,40h34l-4,20h-26z M40,66m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0 M66,66m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0 M34,40l-3,-6h-5" />
+</vector>

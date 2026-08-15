@@ -1,0 +1,101 @@
+{
+  "totalResults": 16,
+  "results": [
+    {
+      "id": 1, "product": {"name": "Speisekartoffeln festkochend", "brand": {"name": "Regional"}},
+      "description": "festkochend, 2 kg Beutel", "price": 1.49, "quantity": "2 kg",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "ALDI SÜD"}]
+    },
+    {
+      "id": 2, "product": {"name": "Kartoffeln vorwiegend festkochend", "brand": {"name": "Bauernhof"}},
+      "description": "5 kg Sack", "price": 2.99, "quantity": "5 kg",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Kaufland"}]
+    },
+    {
+      "id": 3, "product": {"name": "Frische Vollmilch 3,5%", "brand": {"name": "Ja!"}},
+      "description": "1 l", "price": 1.09, "quantity": "1 l",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Lidl"}]
+    },
+    {
+      "id": 4, "product": {"name": "H-Milch 1,5% Fett", "brand": {"name": "Gutes Land"}},
+      "description": "1 l Packung", "price": 0.95, "quantity": "1 l",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Netto Marken-Discount"}]
+    },
+    {
+      "id": 5, "product": {"name": "Deutsche Markenbutter", "brand": {"name": "Milsani"}},
+      "description": "250 g", "price": 1.79, "quantity": "250 g",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "ALDI SÜD"}]
+    },
+    {
+      "id": 6, "product": {"name": "Süßrahmbutter", "brand": {"name": "Kaufland"}},
+      "description": "250 g Stück", "price": 1.69, "quantity": "250 g",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Kaufland"}]
+    },
+    {
+      "id": 7, "product": {"name": "Bananen", "brand": {"name": "Chiquita"}},
+      "description": "lose, Handelsklasse I", "price": 1.19, "quantity": "1 kg",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Lidl"}]
+    },
+    {
+      "id": 8, "product": {"name": "Tafeläpfel Elstar", "brand": {"name": "Regional"}},
+      "description": "2 kg Beutel", "price": 3.29, "quantity": "2 kg",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "ALDI Nord"}]
+    },
+    {
+      "id": 9, "product": {"name": "Rispentomaten", "brand": {"name": "Bio"}},
+      "description": "500 g Schale", "price": 1.49, "quantity": "500 g",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Kaufland"}]
+    },
+    {
+      "id": 10, "product": {"name": "Hähnchenbrustfilet", "brand": {"name": "Meine Metzgerei"}},
+      "description": "je 100 g", "price": 0.99, "quantity": "100 g",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Netto Marken-Discount"}]
+    },
+    {
+      "id": 11, "product": {"name": "Frische Eier Bodenhaltung", "brand": {"name": "Landbeck"}},
+      "description": "10er Packung, Größe M", "price": 1.99, "quantity": "10 Stück",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Lidl"}]
+    },
+    {
+      "id": 12, "product": {"name": "Mineralwasser Classic", "brand": {"name": "Saskia"}},
+      "description": "6 x 1,5 l Kasten", "price": 3.29, "quantity": "6 x 1,5 l",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "ALDI SÜD"}]
+    },
+    {
+      "id": 13, "product": {"name": "Spaghetti Hartweizen", "brand": {"name": "Combino"}},
+      "description": "500 g", "price": 0.79, "quantity": "500 g",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Lidl"}]
+    },
+    {
+      "id": 14, "product": {"name": "Gouda jung am Stück", "brand": {"name": "Milbona"}},
+      "description": "400 g", "price": 2.99, "quantity": "400 g",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Lidl"}]
+    },
+    {
+      "id": 15, "product": {"name": "Röstkaffee gemahlen", "brand": {"name": "Bellarom"}},
+      "description": "500 g", "price": 4.44, "quantity": "500 g",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "Kaufland"}]
+    },
+    {
+      "id": 16, "product": {"name": "Speisezwiebeln", "brand": {"name": "Regional"}},
+      "description": "2 kg Netz", "price": 1.99, "quantity": "2 kg",
+      "validityDates": [{"from": "2026-08-11", "to": "2026-08-16"}],
+      "advertisers": [{"name": "ALDI Nord"}]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "totalResults": 5,
+  "results": [
+    {
+      "id": 1001,
+      "product": {"name": "Speisekartoffeln festkochend", "brand": {"name": "Regional"}},
+      "description": "festkochend, 2 kg Beutel",
+      "price": 1.49,
+      "quantity": "2 kg",
+      "unitPrice": 0.75,
+      "unitPriceUnit": "kg",
+      "validityDates": [{"from": "2026-08-17", "to": "2026-08-23"}],
+      "advertisers": [{"name": "ALDI SÜD", "id": 7}]
+    },
+    {
+      "id": 1002,
+      "product": {"name": "Kartoffeln vorwiegend festkochend", "brand": {"name": "Bauernhof"}},
+      "description": "vorwiegend festkochend",
+      "price": 2.99,
+      "quantity": "5 kg",
+      "validityDates": [{"from": "2026-08-17", "to": "2026-08-23"}],
+      "advertisers": [{"name": "Kaufland", "id": 3}]
+    },
+    {
+      "id": 1003,
+      "product": {"name": "Frische Vollmilch 3,5%", "brand": {"name": "Ja!"}},
+      "description": "1 l Packung",
+      "price": 1.09,
+      "quantity": "1 l",
+      "validityDates": [{"from": "2026-08-17", "to": "2026-08-23"}],
+      "advertisers": [{"name": "Lidl", "id": 1}]
+    },
+    {
+      "id": 1004,
+      "product": {"name": "Mineralwasser Classic", "brand": {"name": "Saskia"}},
+      "description": "6 x 1,5 l Kasten",
+      "price": 3.29,
+      "quantity": "6 x 1,5 l",
+      "validityDates": [{"from": "2026-08-17", "to": "2026-08-23"}],
+      "advertisers": [{"name": "Netto Marken-Discount", "id": 9}]
+    },
+    {
+      "id": 1005,
+      "product": {"name": "Bananen", "brand": {"name": "Chiquita"}},
+      "description": "lose, Handelsklasse I",
+      "price": 1.19,
+      "quantity": "1 kg",
+      "validityDates": [{"from": "2026-08-17", "to": "2026-08-23"}],
+      "advertisers": [{"name": "REWE", "id": 99}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">GroceryCompare</string>
+    <string name="search_hint">Search an item, e.g. Kartoffeln</string>
+    <string name="search">Search</string>
+    <string name="voice_search">Voice search</string>
+    <string name="disclaimer">Prices are indicative — verify in store.</string>
+    <string name="offer_week">Offer week %1$s</string>
+    <string name="regular_price">Regular price</string>
+    <string name="weekly_offer">Weekly offer</string>
+    <string name="valid_until">Valid until %1$s</string>
+    <string name="distance_km">%1$.1f km</string>
+    <string name="per_unit">%1$s / %2$s</string>
+    <string name="no_results">No offers found for this item this week.</string>
+    <string name="offline_notice">Showing last saved offers (offline).</string>
+    <string name="watch_item">Watch price</string>
+    <string name="price_drop_title">Price drop: %1$s</string>
+    <string name="price_drop_body">%1$s now %2$s at %3$s</string>
+    <string name="tab_search">Search</string>
+    <string name="tab_list">Shopping list</string>
+    <string name="tab_watched">Watched</string>
+</resources>

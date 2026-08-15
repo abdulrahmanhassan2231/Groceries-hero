@@ -1,0 +1,7 @@
+[
+  {"chain": "aldi_sued", "address": "ALDI SÜD, Bayerstraße 10, 80335 München", "lat": 48.1401, "lon": 11.5555},
+  {"chain": "lidl", "address": "Lidl, Landsberger Str. 100, 80339 München", "lat": 48.1385, "lon": 11.5300},
+  {"chain": "kaufland", "address": "Kaufland, Schwanthalerstraße 110, 80339 München", "lat": 48.1360, "lon": 11.5410},
+  {"chain": "netto", "address": "Netto Marken-Discount, Dachauer Str. 45, 80335 München", "lat": 48.1470, "lon": 11.5560},
+  {"chain": "aldi_sued", "address": "ALDI SÜD, Leopoldstraße 70, 80802 München", "lat": 48.1620, "lon": 11.5860}
+]
