@@ -22,18 +22,19 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x android/gradlew
-
-      - name: Build Debug APK with custom IP
+      - name: Find and build project
         env:
           SERVER_URL: http://${{ github.event.inputs.ip_address }}:8000
         run: |
-          cd android
+          # Finds where gradlew is hidden in the repository and runs it
+          PROJECT_DIR=$(dirname $(find . -name "gradlew" -print -quit))
+          echo "Found project directory at: $PROJECT_DIR"
+          cd "$PROJECT_DIR"
+          chmod +x gradlew
           ./gradlew assembleDebug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Grocery-App-Debug
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: '**/build/outputs/apk/debug/app-debug.apk'
