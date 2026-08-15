@@ -1,34 +1,32 @@
 @echo off
-REM Launcher for LIVE Marktguru data (real prices, not demo).
-REM 1) Copy .env.example to .env  (and optionally paste your Marktguru keys into it)
-REM 2) Double-click this file, or run it from a terminal in the backend folder.
-REM 3) Open http://localhost:8000/docs -> POST /admin/refresh with your zipcode -> Execute
-REM    Then GET /search returns live offers.
-
+REM Launcher that binds to ALL interfaces so your PHONE can reach the backend.
+REM run_demo.bat / run_live.bat bind to localhost only - the phone cannot see those.
+ 
 cd /d "%~dp0"
-
+ 
 if not exist ".env" (
-    echo No .env found - creating one from .env.example ...
-    copy /y ".env.example" ".env" >nul
-    echo Created .env . You can edit it later to add your Marktguru keys.
-    echo.
+    if exist ".env.example" copy /y ".env.example" ".env" >nul
 )
-
+ 
 echo Installing dependencies (first run only)...
 python -m pip install -q -r requirements.txt
-
+ 
 echo.
 echo ============================================================
-echo  GroceryCompare backend starting in LIVE mode.
-echo  1) Open:  http://localhost:8000/docs
-echo  2) POST /admin/refresh  with your zipcode  -> Execute
-echo     (check the response: "written" should be greater than 0)
-echo  3) GET /search  with q and your zipcode
-echo  If "written" is 0, see docs/live-marktguru-setup.md
+echo  GroceryCompare backend - LAN mode (reachable from phone)
+echo.
+echo  On this PC:   http://localhost:8000/docs
+echo  On phone:     http://192.168.178.176:8000/health
+echo.
+echo  If the phone URL does not load, it is the Windows firewall.
+echo  Run once in an ADMIN PowerShell:
+echo    netsh advfirewall firewall add rule name="GroceryCompare 8000" dir=in action=allow protocol=TCP localport=8000
+echo.
 echo  Press CTRL+C to stop.
 echo ============================================================
 echo.
-
-set DEMO_MODE=0
-python -m uvicorn app.main:app --port 8000
+ 
+set DEMO_MODE=1
+python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 pause
+ 
