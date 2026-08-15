@@ -22,14 +22,12 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Find and build project
+      - name: Build Debug APK with custom IP
         env:
           SERVER_URL: http://${{ github.event.inputs.ip_address }}:8000
         run: |
-          # Finds where gradlew is hidden in the repository and runs it
-          PROJECT_DIR=$(dirname $(find . -name "gradlew" -print -quit))
-          echo "Found project directory at: $PROJECT_DIR"
-          cd "$PROJECT_DIR"
+          # Go straight into the nested android directory where your code lives
+          cd python-automated-bulk-whatsapp-messages*/android || cd android || cd .
           chmod +x gradlew
           ./gradlew assembleDebug
 
