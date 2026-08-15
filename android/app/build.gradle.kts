@@ -40,7 +40,7 @@ android {
             // Inherits API_BASE_URL from defaultConfig (LAN IP or -PbackendBaseUrl).
             // Emulator instead of a real device? Build with:
             //   ./gradlew assembleDebug -PbackendBaseUrl="http://10.0.2.2:8000/"
-            applicationIdSuffix = ""
+            isMinifyEnabled = false
         }
     }
 
