@@ -11,6 +11,15 @@ android {
     namespace = "de.grocerycompare.app"
     compileSdk = 35
 
+    // Backend base URL, resolved at configure time.
+    //   - CI / command line:  ./gradlew assembleDebug -PbackendBaseUrl="http://1.2.3.4:8000/"
+    //   - Local default:      your LAN machine
+    // MUST end with a trailing slash or Retrofit throws IllegalArgumentException.
+    val backendBaseUrl = (project.findProperty("backendBaseUrl") as String?)
+        ?.takeIf { it.isNotBlank() }
+        ?.let { if (it.endsWith("/")) it else "$it/" }
+        ?: "http://192.168.178.176:8000/"
+
     defaultConfig {
         applicationId = "de.grocerycompare.app"
         minSdk = 26
@@ -19,9 +28,7 @@ android {
         versionName = "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        // Point the app at your backend. For the Android emulator, the host machine is
-        // reachable at 10.0.2.2. Override per build type / flavor as needed.
-        buildConfigField("String", "API_BASE_URL", "\"http://10.0.2.2:8000/\"")
+        buildConfigField("String", "API_BASE_URL", "\"$backendBaseUrl\"")
     }
 
     buildTypes {
@@ -30,8 +37,10 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         debug {
-            // real device against a LAN backend: override with your machine's IP
-            // buildConfigField("String", "API_BASE_URL", "\"http://192.168.1.20:8000/\"")
+            // Inherits API_BASE_URL from defaultConfig (LAN IP or -PbackendBaseUrl).
+            // Emulator instead of a real device? Build with:
+            //   ./gradlew assembleDebug -PbackendBaseUrl="http://10.0.2.2:8000/"
+            applicationIdSuffix = ""
         }
     }
 
@@ -51,7 +60,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.activity.compose)
-
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
@@ -61,27 +69,22 @@ dependencies {
     implementation(libs.androidx.compose.animation)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.navigation.compose)
-
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.hilt.work)
     ksp(libs.androidx.hilt.work.compiler)
-
     implementation(libs.retrofit)
     implementation(libs.retrofit.kotlinx.serialization)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging)
     implementation(libs.kotlinx.serialization.json)
-
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
-
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.play.services.location)
     implementation(libs.kotlinx.coroutines.android)
-
     testImplementation(libs.junit)
 }
