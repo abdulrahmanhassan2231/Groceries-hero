@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+    <!-- Dev build: the backend is plain HTTP on the LAN, so allow cleartext broadly.
+         Without base-config, ONLY the domains listed below would work, and building
+         with a different -PbackendBaseUrl would fail silently at runtime. -->
+    <base-config cleartextTrafficPermitted="true" />
+
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">192.168.178.176</domain>
         <domain includeSubdomains="true">10.0.2.2</domain>
+        <domain includeSubdomains="true">localhost</domain>
     </domain-config>
 </network-security-config>
