@@ -1,38 +1,36 @@
 name: Build Android APK
-
+ 
 on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
-    inputs:
-      ip_address:
-        description: 'Your PC IP Address (e.g., 192.168.1.5)'
-        required: true
-        default: '192.168.1.100'
-
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
-
+ 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+ 
       - name: Set up JDK 17
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
           java-version: '17'
-
+          distribution: 'temurin'
+          cache: gradle
+ 
       - name: Build Debug APK with custom IP
-        env:
-          SERVER_URL: http://${{ github.event.inputs.ip_address }}:8000
         run: |
-          # Go straight into the nested android directory where your code lives
-          cd python-automated-bulk-whatsapp-messages*/android || cd android || cd .
+          # android/ is at the repo root — no nested path needed
+          cd android
           chmod +x gradlew
-          ./gradlew assembleDebug
-
+          # Inject backend base URL from a GitHub secret (set it in repo Settings → Secrets)
+          # If your app hard-codes the URL, remove the -P flag below
+          ./gradlew assembleDebug \
+            -PbackendBaseUrl="${{ secrets.BACKEND_BASE_URL }}"
+ 
       - name: Upload APK Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: Grocery-App-Debug
-          path: '**/build/outputs/apk/debug/app-debug.apk'
+        uses: actions/upload-artifact@
